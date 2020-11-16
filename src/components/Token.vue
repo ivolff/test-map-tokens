@@ -5,6 +5,7 @@
       :style="itemImage(tkn)"
       :class="{focused: !flag}"
     >
+     <!-- <button v-if="!flag">X</button>-->
         <span>{{tkn.id}}</span>
     </movable>
   </div>

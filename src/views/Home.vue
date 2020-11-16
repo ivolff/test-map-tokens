@@ -10,8 +10,8 @@
     <input v-model="tmppath" id="name">
     <button @click="adinterface">add token</button>
     <button @click="changeback">change back</button>
-    <span>{{mapname}}</span>
     <span>{{mapdir}}</span>
+    <span>{{mapname}} </span>
   </div>
 </template>
 
