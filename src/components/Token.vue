@@ -1,5 +1,5 @@
 <template>
-  <div @click="changeFlag">
+  <div @click="onclick">
     <movable
       class="token" 
       :style="itemImage(tkn)"
@@ -18,10 +18,9 @@ export default {
   }),
   props: ['tkn'],
   methods: {
-    changeFlag: function() {
-      this.flag = !this.flag;
-      console.log(this.flag)
-      return;
+    onclick() {
+      this.flag = !this.flag
+
     },
     itemImage(tkn) {
       return {
@@ -43,7 +42,6 @@ export default {
     color: greenyellow;
   }
   .focused {
-    border: 5px solid red;
-    border-radius: 50px;  
+    border: 2px solid red;
   }
 </style>
