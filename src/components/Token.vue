@@ -1,12 +1,13 @@
 <template>
+  <div @click="changeFlag">
     <movable
       class="token" 
       :style="{'background-image': 'url('+tkn.path+')'}"
       :class="{focused: flag}"
-      @click="changeFlag"
     >
         <span>{{tkn.id}}</span>
     </movable>
+  </div>
 </template>
 
 <script>
@@ -19,6 +20,7 @@ export default {
   methods: {
     changeFlag: function() {
       this.flag = !this.flag;
+      console.log(this.flag)
       return;
     },
   },
