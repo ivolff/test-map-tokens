@@ -2,7 +2,7 @@
     <div>
         <div
             class="map"
-            :style="{'background-image': 'url('+path+')'}"
+            :style="itemImage()"
         >
         </div>
         <button class="butt" @click="changePath">change</button>
@@ -12,9 +12,12 @@
 <script>
 export default {
     name: 'map',
+  props: {
+    dir: String,
+    name: String
+  },
     data: () => ({
         num: '2',
-        path: require('../assets/bg/tmp1.png')
     }),
     methods: {
         changePath: function() {
@@ -27,9 +30,14 @@ export default {
             }
             console.log(this.path)
             return;
+        },
+      itemImage() {
+          console.log(123)
+        return {
+          background: `url(${require(`@/assets/${this.dir}/${this.name}.png`)}) no-repeat center / cover`
         }
     }
-}
+},}
 </script>
 
 <style>

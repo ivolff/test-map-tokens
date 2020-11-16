@@ -5,7 +5,13 @@
         :key="tok.id"
         :tkn="tok"
     />
-    <Map />
+    <Map v-bind:dir="mapdir" v-bind:name="mapname" />
+    <input v-model="tmptitle" id="type">
+    <input v-model="tmppath" id="name">
+    <button @click="adinterface">add token</button>
+    <button @click="changeback">change back</button>
+    <span>{{mapname}}</span>
+    <span>{{mapdir}}</span>
   </div>
 </template>
 
@@ -20,19 +26,29 @@ export default {
   },
   data: () => ({
     count: 3,
+    mapdir: "bg",
+    mapname: "Deerbarrow",
+    tmptitle: "tkn",
+    tmppath: "tmp1",
     toks: [
-      {title: "name1", id: 1, path: require('../assets/tkn/tmp1.png')},
-      {title: "name2", id: 2, path: require('../assets/tkn/tmp2.png')}
+      {title: "tkn", id: 1, path: "Bonfire"},
+      {title: "tkn", id: 2, path: "Tree"}
     ]
   }),
   methods: {
-    addToken: function() {
+    addToken: function(type, name) {
       this.toks.push({
-        title: "name3",
+        title: type,
         id: this.count++,
-        path: require('../assets/tkn/tmp2.png')
+        path: name
       })
-      return;
+    },
+    adinterface: function() {
+      this.addToken(this.tmptitle, this.tmppath)
+    },
+    changeback: function() {
+      this.mapdir = this.tmptitle
+      this.mapname = this.tmppath
     }
   },
 }

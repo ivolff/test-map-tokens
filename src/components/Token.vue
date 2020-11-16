@@ -2,7 +2,7 @@
   <div @click="changeFlag">
     <movable
       class="token" 
-      :style="{'background-image': 'url('+tkn.path+')'}"
+      :style="itemImage(tkn)"
       :class="{focused: flag}"
     >
         <span>{{tkn.id}}</span>
@@ -23,6 +23,11 @@ export default {
       console.log(this.flag)
       return;
     },
+    itemImage(tkn) {
+      return {
+        background: `url(${require(`@/assets/${tkn.title}/${tkn.path}.png`)}) no-repeat center / cover`
+      }
+    }
   },
 }
 </script>
