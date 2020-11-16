@@ -5,7 +5,6 @@
             :style="itemImage()"
         >
         </div>
-        <button class="butt" @click="changePath">change</button>
     </div>
 </template>
 
@@ -20,17 +19,6 @@ export default {
         num: '2',
     }),
     methods: {
-        changePath: function() {
-            if (this.num === '1') {
-                this.num = '2';
-                this.path =  require('../assets/bg/tmp2.png')
-            } else {
-                this.num = '1';
-                this.path =  require('../assets/bg/tmp1.png')
-            }
-            console.log(this.path)
-            return;
-        },
       itemImage() {
           console.log(123)
         return {

@@ -1,9 +1,9 @@
 <template>
   <div @click="onclick">
-    <movable
+    <movable v-bind:disabled="flag"
       class="token" 
       :style="itemImage(tkn)"
-      :class="{focused: flag}"
+      :class="{focused: !flag}"
     >
         <span>{{tkn.id}}</span>
     </movable>
